@@ -1,0 +1,2 @@
+rootProject.name = "Si ware Task"
+include ':app'

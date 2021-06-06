@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <!--Changes the state of Bluetooth on button click-->
+    <Button
+        android:id="@+id/bluetoothOnOffButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bluetoothDiscoverDevices"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Bluetooth"
+        android:textAllCaps="true" />
+
+    <Button
+        android:id="@+id/bluetoothDiscoverDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bluetoothTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Click me to refresh List"
+        android:textAllCaps="true"
+        android:visibility="gone" />
+
+    <!--Displays the state of Bluetooth on button click-->
+    <TextView
+        android:id="@+id/bluetoothTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:hint="Bluetooth Status"
+        android:textSize="30sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bluetoothDevicesRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bluetoothOnOffButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        tools:itemCount="3"
+        tools:listitem="@layout/bluetooth_device_layout_item" />
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/ripple_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bluetoothOnOffButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:rb_color="#2355d2"
+        app:rb_duration="1500"
+        app:rb_radius="14dp"
+        app:rb_rippleAmount="3"
+        app:rb_scale="4" />
+
+</RelativeLayout>
